@@ -10,19 +10,19 @@ public class Field extends JPanel
     private Container contentPane;
     public static int[] sizeField;
     
-    public Field()
+    public Field(Score score)
     {
         setBackground(Color.yellow);
         setBounds(0,0,400,400);   
         setLayout(null);
-        ball=new Ball();
+        ball=new Ball(score);
         paddle=new Paddle(100);
         this.addMouseMotionListener(new MouseMotionAdapter() {
             public void mouseMoved(MouseEvent e) {
-                if(Pong.init)
-                {
+                
+                
                     setPaddlePos(e.getX());
-                }
+                
             }
         });
         this.add(ball);

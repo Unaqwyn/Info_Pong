@@ -18,7 +18,7 @@ public class Pong
     private TimerTask task;
     private JButton start;
     public static boolean init;
-    
+    private Score score;
     public Pong()
     {
         System.out.print('\u000C');
@@ -28,18 +28,16 @@ public class Pong
         contentPane=fenster.getContentPane();
         contentPane.setLayout(new BorderLayout());
         JPanel panel=new JPanel();
-        panel.setLayout(new GridLayout(2,1));
-        JButton init=new JButton("Initialize");
-        init.addActionListener(e->init());
-        init.setPreferredSize(new Dimension(400,20));
-        panel.add(init);
+        panel.setLayout(new FlowLayout());
         start=new JButton("Start");
         start.addActionListener(e->play());
-        start.setPreferredSize(new Dimension(400,20));
-        start.setEnabled(false);
+        start.setPreferredSize(new Dimension(100,60));
         panel.add(start);
+        score=new Score();
+        panel.add(score);
+        
         contentPane.add(panel, BorderLayout.NORTH);
-        field=new Field();
+        field=new Field(score);
         field.setPreferredSize(new Dimension(400,400));
         contentPane.add(field, BorderLayout.CENTER);
         
@@ -58,7 +56,6 @@ public class Pong
         setPaddlePos(field.getWidth()/2-paddle.getWidth()/2);
         ball.getStartPos();
         ball.setStartSpeed();
-        start.setEnabled(true);
         init=true;
     }
     

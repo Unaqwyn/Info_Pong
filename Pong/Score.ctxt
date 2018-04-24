@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Score
+comment0.text=\r\n\ Beschreiben\ Sie\ hier\ die\ Klasse\ Score.\r\n\ \r\n\ @author\ (Ihr\ Name)\ \r\n\ @version\ (eine\ Versionsnummer\ oder\ ein\ Datum)\r\n
+comment1.params=
+comment1.target=Score()
+comment1.text=\r\n\ Konstruktor\ f\u00FCr\ Objekte\ der\ Klasse\ Score\r\n
+comment2.params=
+comment2.target=void\ update()
+comment3.params=
+comment3.target=java.lang.String\ toString()
+numComments=4
