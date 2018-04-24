@@ -14,6 +14,7 @@ public class Field extends JPanel
     {
         setBackground(Color.yellow);
         setBounds(0,0,400,400);   
+        setLayout(null);
         ball=new Ball();
         paddle=new Paddle(100);
         this.addMouseMotionListener(new MouseMotionAdapter() {

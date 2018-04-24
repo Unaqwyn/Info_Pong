@@ -46,8 +46,10 @@ public class Pong
         paddle=field.getPaddle();
         ball=field.getBall();
         
+        init();
         fenster.pack();
         fenster.setVisible(true);
+        
     }
 
     public void init()
