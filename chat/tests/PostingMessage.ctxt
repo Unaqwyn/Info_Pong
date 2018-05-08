@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=PostingMessage
+comment1.params=user\ text
+comment1.target=PostingMessage(java.lang.String,\ java.lang.String)
+comment2.params=
+comment2.target=java.lang.String\ getText()
+comment3.params=
+comment3.target=java.lang.String\ toString()
+numComments=4

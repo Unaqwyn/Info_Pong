@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=DiagrammTest
+comment1.params=
+comment1.target=DiagrammTest()
+comment2.params=port
+comment2.target=DiagrammTest(int)
+comment3.params=
+comment3.target=void\ open()
+comment4.params=port
+comment4.target=void\ open(int)
+comment5.params=destinationsHostName\ destinationsPortNummer
+comment5.target=void\ send(java.lang.String,\ int)
+comment6.params=
+comment6.target=void\ receive()
+comment7.params=
+comment7.target=void\ beenden()
+numComments=8

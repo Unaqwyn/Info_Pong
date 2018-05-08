@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=Communication
+comment1.params=
+comment1.target=Communication()
+comment2.params=
+comment2.target=void\ open()
+comment3.params=port
+comment3.target=void\ open(int)
+comment4.params=
+comment4.target=void\ waitForMessage()
+comment5.params=
+comment5.target=Message\ getMessage()
+comment6.params=
+comment6.target=java.net.SocketAddress\ getSocketAddress()
+comment7.params=host\ port\ message
+comment7.target=void\ sendMessage(java.lang.String,\ int,\ Message)
+comment8.params=address\ message
+comment8.target=void\ sendMessage(java.net.SocketAddress,\ Message)
+comment9.params=
+comment9.target=void\ close()
+numComments=10
