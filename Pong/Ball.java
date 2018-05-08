@@ -11,13 +11,15 @@ public class Ball extends JPanel
     public int x;
     public int y;
     private Random random;
+    private Score score;
     
-    public Ball()
+    public Ball(Score score)
     {
         setBackground(Color.black);
         setBounds(200,0,20,20);
         setPreferredSize(new Dimension(20,20));
         random=new Random();
+        this.score=score;
     }
 
     public void getStartPos()
@@ -69,6 +71,7 @@ public class Ball extends JPanel
                          {
                              vx=vy*(random.nextInt(3)-1)/10;
                          }
+                         score.update();
                     }
                 }
                 if(y>=380)
