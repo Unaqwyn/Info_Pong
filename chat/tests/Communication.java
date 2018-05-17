@@ -4,7 +4,6 @@ import java.io.*;
 import java.net.*;
 
 public class Communication {
-    private Interface ui;
  private byte[] receiveBuffer;
  private DatagramSocket socket;
  private DatagramPacket receivePacket;
@@ -13,7 +12,6 @@ public class Communication {
      receiveBuffer = new byte[2048];
      receivePacket =
      new DatagramPacket (receiveBuffer, receiveBuffer.length);
-     ui=new Interface(this);
  }
  
  public void open() {

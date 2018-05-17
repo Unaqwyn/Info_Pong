@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Client
+comment1.params=
+comment1.target=Client()
+comment2.params=
+comment2.target=void\ run()
+comment3.params=m
+comment3.target=void\ addClient(Message)
+comment4.params=m
+comment4.target=void\ removeClient(Message)
+comment5.params=
+comment5.target=void\ getMessage()
+numComments=6
