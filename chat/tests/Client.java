@@ -18,6 +18,18 @@ public class Client
     public Client()
     {
         communication=new Communication();
+        
+        Runtime.getRuntime().addShutdownHook(new Thread() {
+                public void run() {
+                    System.out.println ("Closing communication ...");
+                    if (communication != null) {
+                        communication.close ();
+                    }
+                    System.out.println ("Communication closed.");
+                }
+        });
+        
+        
         receiver = new Thread() {
             public void run () { 
                 while (true) {

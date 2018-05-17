@@ -93,15 +93,7 @@ public class Interface extends JFrame
             }   
         };
         
-        Runtime.getRuntime().addShutdownHook(new Thread() {
-                public void run() {
-                    System.out.println ("Closing communication ...");
-                    if (communication != null) {
-                        communication.close ();
-                    }
-                    System.out.println ("Communication closed.");
-                }
-        });
+        
         
         System.out.println ("Setup Chat Client");
         // open the communication channel
