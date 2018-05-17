@@ -5,7 +5,6 @@ import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.border.*;
 
-
 /**
  * Write a description of class Interface here.
  *
@@ -15,7 +14,7 @@ import javax.swing.border.*;
 public class Interface extends JFrame
 {
     private static final long serialVersionUID = -2937100503312197315L;
-    
+
     private JButton send;
     private JButton register;
     private JButton unregister;
@@ -30,27 +29,26 @@ public class Interface extends JFrame
     private String user;
     private String host;
     private boolean filterActive=false;
-    
+
     private static final  int     SERVER_PORT = 5555;
     private static final  String  SERVER_HOST = "localhost";
     private static final  String  CRLF        = "\r\n";
     private static final int PORT=1234;
-    
+
     private Thread receiver;
-    
-    
+
     public Interface()
     {
         communication=new Communication();
         System.out.print('\u000C');
-        
+
         addWindowListener (new WindowAdapter() {
                 public void windowClosing(WindowEvent w) {
                     quit();
                 }
             });
-            
-             receiver = new Thread() {
+
+        receiver = new Thread() {
             public void run () { 
                 while (true) {
                     try {
@@ -83,7 +81,7 @@ public class Interface extends JFrame
                             }
                             else
                             {
-                               SwingUtilities.invokeLater (appendText);
+                                SwingUtilities.invokeLater (appendText);
                             }
                         } 
                     } catch (Exception e) {
@@ -92,25 +90,23 @@ public class Interface extends JFrame
                 } 
             }   
         };
-        
-        
+
         
         System.out.println ("Setup Chat Client");
         // open the communication channel
         communication.open();
         // start a background thread to receive messages from the server
         receiver.start ();
-        
+
         setLayout(new BorderLayout());
         add(getNorth(), BorderLayout.NORTH);
         add(getCenter(), BorderLayout.CENTER);
         add(getSouth(), BorderLayout.SOUTH);
-        
-        
+
         pack();
         setVisible(true);
     }
-    
+
     public JPanel getNorth()
     {
         JPanel panel=new JPanel();
@@ -140,18 +136,18 @@ public class Interface extends JFrame
         panel.add(panel3);
         return panel;
     }
-    
+
     public JPanel getCenter()
     {
         JPanel panel=new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
-        
+
         panel.add(createFilterPanel());
         receivedMessages=new TextArea();
         panel.add(receivedMessages);
         return panel;
     }
-    
+
     private JPanel createFilterPanel()
     {
         JPanel filter=new JPanel();
@@ -167,7 +163,7 @@ public class Interface extends JFrame
         filter.add(filterOn, BorderLayout.EAST);
         return filter;
     }
-    
+
     private void filterGedrueckt()
     {
         filterActive=!filterActive;
@@ -179,7 +175,7 @@ public class Interface extends JFrame
             filterOn.setText("Filter einschalten");
         }
     }
-    
+
     public JPanel getSouth()
     {
         JPanel panel = new JPanel();
@@ -191,16 +187,16 @@ public class Interface extends JFrame
         panel.add(send,BorderLayout.EAST);
         return panel;
     }
-    
+
     private void register()
     {
-        
+
         user = textName.getText ();
         host = textServer.getText ();
         System.out.println ("Register " + user);
         communication.sendMessage (host, SERVER_PORT, new RegisterMessage (user));
     }
-    
+
     private void unregister()
     {
         System.out.println ("Unregister " + user);
@@ -208,7 +204,7 @@ public class Interface extends JFrame
         host=null;
         user= null;
     }
-    
+
     private void send()
     {
         String text= sendMessages.getText();
@@ -216,7 +212,7 @@ public class Interface extends JFrame
         communication.sendMessage(host, SERVER_PORT, new PostingMessage(user, text));
         //receivedMessages.setText("");
     }
-    
+
     private void quit () {
         // quit the application
         System.out.println ("Quit Chat Client");
