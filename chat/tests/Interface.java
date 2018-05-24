@@ -194,13 +194,13 @@ public class Interface extends JFrame
         user = textName.getText ();
         host = textServer.getText ();
         System.out.println ("Register " + user);
-        communication.sendMessage (host, SERVER_PORT, new RegisterMessage (user));
+        communication.sendMessage (host, SERVER_PORT, new RegisterMessage(user));
     }
 
     private void unregister()
     {
         System.out.println ("Unregister " + user);
-        communication.sendMessage (host, SERVER_PORT, new UnregisterMessage (user));
+        communication.sendMessage (host, SERVER_PORT, new UnregisterMessage(user));
         host=null;
         user= null;
     }
