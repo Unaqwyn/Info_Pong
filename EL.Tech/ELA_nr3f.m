@@ -17,6 +17,7 @@ subplot(2,1,1);
 plot(f_data,abs(g_data),'linewidth',lw); %oder semilogy oder loglog oder semilogx
 xlabel('f[Hz]');
 ylabel('A')
+grid on;
 subplot(2,1,2);
 semilogx(f_data,angle(g_data)*180/pi,'linewidth',lw);
 xlabel('f[Hz]');

@@ -10,7 +10,7 @@ f_E=1e6;
 N=1e6;
 lw=3;
 %Funktionen
-g=@(f)(-R2./((1+(2*pi*f*R2*C2).^2).^0.5)).*(2*pi*f*C1/((1+(2*pi*f*R1*C1).^2).^0.5));
+g=@(f)(-R2./(1+j*2*pi*f*C2*R2)).*((j*2*pi*f*C1)./(1+j*2*pi*f*C1*R1));
 % daten
 f_data=linspace(f_0,f_E,N);
 g_data=g(f_data);
@@ -19,6 +19,7 @@ figure(4);
 subplot(2,1,1);
 semilogx(f_data,20*log(abs(g_data))/log(10),'linewidth',lw);
 xlabel('f[Hz]');ylabel('|G|[dB]');title('Amplitudengang |G(f)|');
+grid on;
 subplot(2,1,2);
 semilogx(f_data,angle(g_data)/pi,'linewidth',lw);
 xlabel('f[Hz]');
